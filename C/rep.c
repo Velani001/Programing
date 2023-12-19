@@ -2,12 +2,15 @@
 
 int main(int argc, char *argv[]){
 
+    int i;
     if(argc < 2 ){
-        printf("Precisa colocar os parametros necessarios");
+        printf("Precisa colocar os parametros necessarios\n");
 
     }
     else{
-        printf("Varrendo Host %s na ports %s \n", argv[1], argv[2]);
-        return 0;
+        for(i=0;i<=10;i++){
+            printf("Varrendo Host %s.%i \n", argv[1], i);
+            
+        }    
     }
 }
