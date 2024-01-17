@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-import socket
+import socket,sys
 
 meusocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-meusocket.connect(("44.208.5.36",43))
-meusocket.send(b"desecsecurity.com\r\r")
-resposta = s.recv(1024)
+meusocket.connect(("whois.iana.org",43))
+meusocket.send(sys.argv[1]+"\r\n")
+resposta = meusocket.recv(1024).split()
 print(resposta)
