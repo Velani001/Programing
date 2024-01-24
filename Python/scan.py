@@ -10,5 +10,8 @@ pTCP = TCP(dport=porta,flags="S")
 pacote = pIP/pTCP
 reposta, noresp = sr(pacote)
 
-reposta.show()
+for resp in reposta:
+    portas = resp[1][TCP].sport
+    flag = resp[1][TCP].flags
+    print("%d %s"%(portas,flag))
 
